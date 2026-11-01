@@ -49,16 +49,16 @@ h1,h2,h3,h4{font-family:var(--display);font-weight:500;line-height:1.15;margin:0
 .sidelinks span{font-family:var(--mono);font-size:.7rem;margin-right:8px}
 
 /* Main */
-main{flex:1;min-width:0;padding-left:48px;padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:44px 64px}
-.panel{max-width:860px}
+main{flex:1;min-width:0;padding-left:56px;padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:44px 160px}
+.panel{max-width:980px;margin:0 auto}
 .panel>h2{font-size:2.1rem;margin-bottom:6px}
 .panel>.lede{font-family:var(--mono);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 28px}
 .panel h3{font-size:1.2rem;font-weight:600;margin:32px 0 12px;padding-bottom:6px;border-bottom:1px solid var(--line)}
 .panel h3:first-of-type{margin-top:0}
-.prose p{max-width:66ch;margin:0 0 14px}
+.prose p{max-width:72ch;margin:0 0 14px}
 .btn{display:inline-block;margin-top:10px;background:var(--accent);color:var(--bg);padding:10px 16px;font-weight:500;font-size:.9rem;border:0}
 .btn:hover{opacity:.9}
-.note{background:var(--surface);border-left:3px solid var(--accent);padding:12px 16px;color:var(--muted);font-size:.92rem;margin:0 0 24px;max-width:66ch}
+.note{background:var(--surface);border-left:3px solid var(--accent);padding:12px 16px;color:var(--muted);font-size:.92rem;margin:0 0 24px;max-width:72ch}
 .card{background:var(--surface);border:1px solid var(--line);padding:20px;min-width:0}
 
 /* Ledger list */
@@ -105,7 +105,7 @@ main{flex:1;min-width:0;padding-left:48px;padding-right:max(16px,env(safe-area-i
   .tabs a{white-space:nowrap;border-left:0;border-bottom:3px solid transparent;padding:10px 12px}
   .tabs a[aria-current="page"]{border-left:0;border-bottom-color:var(--accent);background:transparent}
   .sidelinks{display:none}
-  main{padding-left:max(16px,env(safe-area-inset-left,0px));padding-block:28px 48px}
+  main{padding-left:max(16px,env(safe-area-inset-left,0px));padding-block:28px 120px}
   .two{grid-template-columns:1fr}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
