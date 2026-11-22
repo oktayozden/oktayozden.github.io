@@ -145,6 +145,85 @@ main{flex:1;min-width:0;margin-left:280px;padding-left:64px;padding-right:max(16
   .panel>h2{font-size:2.6rem}
   .two{grid-template-columns:1fr}
 }
+
+/* 2HH-SFC Application: interactive model, scoped to its own section */
+#sfc-app{max-width:1180px;container-type:inline-size;--you:#c23a2b;--ok:#3b5f3a;--warn:#8a5a00;--warn-bg:#f6ecd6}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) #sfc-app{--you:#ff7b6b;--ok:#9fc29a;--warn:#e3b566;--warn-bg:#33290f}}
+:root[data-theme="dark"] #sfc-app{--you:#ff7b6b;--ok:#9fc29a;--warn:#e3b566;--warn-bg:#33290f}
+#sfc-app>h2{font-size:clamp(1.9rem,3.2vw,2.6rem);line-height:1.08;letter-spacing:-.02em}
+#sfc-app .ap{display:flex;flex-direction:column;gap:16px;margin-top:8px;font-size:.92rem;line-height:1.45}
+#sfc-app button{font:inherit;color:var(--fg);cursor:pointer}
+#sfc-app .seg{display:inline-flex;flex-wrap:wrap;border:1px solid var(--rule);align-self:flex-start}
+#sfc-app .seg button{border:0;background:transparent;padding:9px 16px;text-align:left;font-weight:600}
+#sfc-app .seg button+button{border-left:1px solid var(--rule)}
+#sfc-app .seg button small{display:block;font-weight:400;color:var(--muted);font-size:.78rem}
+#sfc-app .seg button[aria-pressed="true"]{background:var(--fg);color:var(--bg)}
+#sfc-app .seg button[aria-pressed="true"] small{color:var(--bg);opacity:.75}
+#sfc-app .scn{display:flex;flex-wrap:wrap;gap:6px}
+#sfc-app .scn button{border:1px solid var(--line);background:transparent;padding:6px 12px;font-size:.74rem;text-transform:uppercase;letter-spacing:.1em}
+#sfc-app .scn button:hover{border-color:var(--accent);color:var(--accent)}
+#sfc-app .scn button[aria-pressed="true"]{border-color:var(--accent);background:var(--accent);color:var(--bg)}
+#sfc-app .scn button.custom{border-style:dashed}
+#sfc-app .scn button.custom[aria-pressed="true"]{border-style:solid}
+#sfc-app .bench{display:grid;grid-template-columns:270px minmax(0,1fr);gap:16px;align-items:start}
+#sfc-app .rail,#sfc-app .mainc{display:flex;flex-direction:column;gap:12px;min-width:0}
+#sfc-app .box{background:var(--surface);padding:14px 16px;min-width:0}
+#sfc-app .kk{font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:var(--muted);margin:0 0 8px}
+#sfc-app .desc{margin:0}
+#sfc-app .ctl{display:flex;flex-direction:column;gap:2px;padding:9px 0;border-top:1px solid var(--line)}
+#sfc-app .ctl:first-of-type{border-top:0;padding-top:0}
+#sfc-app .ctl .row{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+#sfc-app .ctl label{font-weight:600}
+#sfc-app .ctl output{font-variant-numeric:tabular-nums;font-weight:600}
+#sfc-app .ctl output.moved{color:var(--you)}
+#sfc-app .ctl input[type=range]{width:100%;accent-color:var(--you);margin:4px 0 0}
+#sfc-app .ctl .ends{display:flex;justify-content:space-between;font-size:.72rem;color:var(--muted);font-variant-numeric:tabular-nums}
+#sfc-app .ctl .meta{font-size:.78rem;color:var(--muted)}
+#sfc-app .rbtn{border:1px solid var(--rule);background:transparent;padding:6px 12px;margin-top:10px;font-size:.72rem;text-transform:uppercase;letter-spacing:.12em}
+#sfc-app .rbtn:hover:not(:disabled){background:var(--fg);color:var(--bg)}
+#sfc-app .rbtn:disabled{opacity:.4;cursor:default}
+#sfc-app .legend{display:flex;flex-direction:column;gap:6px;font-size:.85rem}
+#sfc-app .legend span{display:flex;align-items:center;gap:8px}
+#sfc-app .sw{display:inline-block;width:22px;height:0;border-top:2px solid var(--fg);flex:none}
+#sfc-app .sw.you{border-top:3px solid var(--you)}
+#sfc-app .sw.shock{border-top:1px dashed var(--muted)}
+#sfc-app .checks{font-size:.85rem;display:grid;grid-template-columns:1fr auto;gap:3px 10px}
+#sfc-app .checks b{font-weight:400;font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+#sfc-app .checks sup{font-size:.65em}
+#sfc-app .pill{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;font-weight:600;padding:3px 10px;margin-top:10px}
+#sfc-app .pill.ok{color:var(--ok);border:1px solid var(--ok)}
+#sfc-app .pill.bad{color:var(--you);border:1px solid var(--you)}
+#ap_notes:empty{display:none}
+#ap_notes{display:flex;flex-direction:column;gap:8px}
+#sfc-app .warn{background:var(--warn-bg);color:var(--warn);border-left:2px solid var(--warn);padding:8px 12px;font-size:.85rem}
+#sfc-app .tablewrap{overflow-x:auto}
+#sfc-app table.sum{border-collapse:collapse;width:100%;font-size:.88rem}
+#sfc-app table.sum th,#sfc-app table.sum td{padding:6px 10px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap;font-variant-numeric:tabular-nums}
+#sfc-app table.sum th:first-child,#sfc-app table.sum td:first-child{text-align:left}
+#sfc-app table.sum thead th{font-size:.68rem;color:var(--muted);font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+#sfc-app table.sum tr:last-child td{border-bottom:0}
+#sfc-app table.sum th .sw{vertical-align:middle;margin-right:6px}
+#sfc-app .panels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+#sfc-app .chart{background:var(--surface);padding:10px 10px 4px;min-width:0}
+#sfc-app .chart .ph{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}
+#sfc-app .chart .pt{font-family:var(--display);font-size:1.05rem;font-style:italic;line-height:1.2}
+#sfc-app .chart .rd{font-size:.72rem;font-variant-numeric:tabular-nums;color:var(--muted);white-space:nowrap}
+#sfc-app .chart .rd i{font-style:normal;color:var(--fg)}
+#sfc-app .chart .rd i.y::before{content:"";display:inline-block;width:8px;height:3px;background:var(--you);margin:0 4px 3px 8px}
+#sfc-app svg.ch{display:block;width:100%;height:auto;touch-action:pan-y}
+#sfc-app svg.ch text{font-family:var(--body);font-size:10px;fill:var(--muted);font-variant-numeric:tabular-nums}
+#sfc-app svg.ch .g{stroke:var(--line);stroke-width:1}
+#sfc-app svg.ch .ax{stroke:var(--muted);stroke-width:1}
+#sfc-app svg.ch .shock{stroke:var(--muted);stroke-width:1;stroke-dasharray:3 3;opacity:.7}
+#sfc-app svg.ch .ref{fill:none;stroke:var(--fg);stroke-width:1.6;stroke-linejoin:round}
+#sfc-app svg.ch .you{fill:none;stroke:var(--you);stroke-width:2.2;stroke-linejoin:round}
+#sfc-app svg.ch .cur{stroke:var(--muted);stroke-width:1}
+#sfc-app svg.ch .dref{fill:var(--fg);stroke:var(--surface);stroke-width:2}
+#sfc-app svg.ch .dyou{fill:var(--you);stroke:var(--surface);stroke-width:2}
+#sfc-app .foot{color:var(--muted);font-size:.85rem;max-width:80ch;margin:0}
+@container (max-width:900px){#sfc-app .bench{grid-template-columns:minmax(0,1fr)}}
+@container (max-width:640px){#sfc-app .panels{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@container (max-width:430px){#sfc-app .panels{grid-template-columns:minmax(0,1fr)}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 
@@ -169,6 +248,7 @@ main{flex:1;min-width:0;margin-left:280px;padding-left:64px;padding-right:max(16
       <li><a href="#videos">Public Videos</a></li>
       <li><a href="#teaching">Teaching</a></li>
       <li><a href="#sfc-lecture">SFC Online Lecture</a></li>
+      <li><a href="#sfc-app">2HH-SFC Application</a></li>
       <li><a href="#cv">CV</a></li>
     </ul>
   </nav>
@@ -435,6 +515,33 @@ main{flex:1;min-width:0;margin-left:280px;padding-left:64px;padding-right:max(16
   <p class="note">Son not: Yeterli başvuru olmaması durumunda ders açılmayabilir.</p>
 </section>
 
+<section class="panel" id="sfc-app" lang="tr" hidden>
+  <h2>2HH-SFC: İki Hanehalklı SFC Giriş Modeli</h2>
+  <p class="lede">Etkileşimli uygulama · Model 2H ve Model 2H-CC</p>
+  <div class="prose">
+    <p>İki hanehalklı (işçiler ve rantiyeler) stok-akım tutarlı giriş modelini kod yazmadan deneyin.</p>
+    <p>Bir model ve bir senaryo seçin. Siyah çizgi makaledeki sonucu gösterir; kaydırıcıyı oynattığınızda kendi ayarınızın sonucu kırmızı çizgiyle üzerine çizilir. Modelin R kodları ve adım adım kılavuz <a href="https://github.com/oktayozden/SFCyegiris">github.com/oktayozden/SFCyegiris</a> adresindedir.</p>
+  </div>
+  <div class="ap">
+    <div class="seg" id="ap_models" role="group" aria-label="Model seçimi"></div>
+    <div class="scn" id="ap_tabs" role="group" aria-label="Senaryo seçimi"></div>
+    <div class="bench">
+      <div class="rail">
+        <div class="box"><div class="kk" id="ap_scTitle">Senaryo</div><p class="desc" id="ap_desc"></p></div>
+        <div class="box"><div class="kk">Şokun boyutu</div><div id="ap_ctls"></div><button class="rbtn" id="ap_reset" type="button"></button></div>
+        <div id="ap_notes"></div>
+        <div class="box"><div class="kk">Çizgiler</div><div class="legend" id="ap_legend"></div></div>
+        <div class="box"><div class="kk">Muhasebe sınaması</div><div class="checks" id="ap_checks"></div><div id="ap_verdict"></div></div>
+      </div>
+      <div class="mainc">
+        <div class="box tablewrap"><table class="sum" id="ap_sum"></table></div>
+        <div class="panels" id="ap_panels"></div>
+      </div>
+    </div>
+    <p class="foot">Şok 10. dönemde başlar ve kalıcıdır; şekiller 2. dönemden 100. döneme kadar olan patikayı gösterir. Uygulama, R kodlarıyla aynı denklemleri tarayıcınızda çözer.</p>
+  </div>
+</section>
+
 <section class="panel" id="cv" hidden>
   <h2>Curriculum Vitae</h2>
   <p class="lede">Full CV as PDF</p>
@@ -445,7 +552,7 @@ main{flex:1;min-width:0;margin-left:280px;padding-left:64px;padding-right:max(16
 
 <script>
 (function(){
-  var ids=["about","research","publications","projects","conferences","videos","teaching","sfc-lecture","cv"];
+  var ids=["about","research","publications","projects","conferences","videos","teaching","sfc-lecture","sfc-app","cv"];
   var links=document.querySelectorAll(".tabs a");
   function show(){
     var h=location.hash.replace("#","");
@@ -458,6 +565,279 @@ main{flex:1;min-width:0;margin-left:280px;padding-left:64px;padding-right:max(16
   }
   window.addEventListener("hashchange",show);
   show();
+})();
+</script>
+
+<script>
+/* 2HH-SFC Application: the model and its interface run entirely in the browser */
+(function(){
+"use strict";
+// Model 2H and Model 2H-CC: a line-by-line port of model_2h.R and model_2h_cc.R.
+// Arrays are 1-based (index 0 unused) so that indices match the R code and the paper.
+const T = 100, SHOCK = 10;
+function arr() { return new Float64Array(T + 1); }
+function path(base, shocked) { const a = arr(); for (let t = 1; t <= T; t++) a[t] = (t >= SHOCK && shocked !== undefined) ? shocked : base; return a; }
+
+const BASE_2H = { Gexp: 150, Gwel: 14.8, tauw: 0.20, taur: 0.20, phi: 3 / 7, icb: 0.025 };
+const BASE_CC = { gexp: 150, gwel: 14.8, tauw: 0.20, taur: 0.20, phi: 3 / 7, icb: 0.025, omega0: 10000, rho0: 9000 };
+
+function checks(o, reval) {
+  const { YDw, Cw, YDr, Cr, DA, I, GDEF, Lcon, D, B, Enfs, Efs, Lpro, RES, A } = o;
+  let c1 = 0, c2 = 0, c3 = 0;
+  const nl = t => [YDw[t] - Cw[t], YDr[t] - Cr[t] + (reval ? reval[t] : 0), DA[t] - I[t] - (reval ? reval[t] : 0), 0, 0, -GDEF[t]];
+  const nfw = t => [-Lcon[t], D[t] + B[t] + Enfs[t] + Efs[t], -Lpro[t] - Enfs[t], Lpro[t] + Lcon[t] + RES[t] - D[t] - A[t] - Efs[t], A[t] - RES[t], -B[t]];
+  for (let t = 1; t <= T; t++) {
+    const w = nfw(t); c2 = Math.max(c2, Math.abs(w.reduce((a, b) => a + b, 0)));
+    if (t >= 2) {
+      const n = nl(t), w0 = nfw(t - 1);
+      c1 = Math.max(c1, Math.abs(n.reduce((a, b) => a + b, 0)));   // revaluation cancels in the sum
+      for (let k = 0; k < 6; k++) c3 = Math.max(c3, Math.abs(w[k] - w0[k] - n[k]));
+    }
+  }
+  return { c1, c2, c3 };
+}
+
+function run2H(sh = {}) {
+  const tauw = path(BASE_2H.tauw, sh.tauw), taur = path(BASE_2H.taur, sh.taur), phi = path(BASE_2H.phi, sh.phi);
+  const icb = path(BASE_2H.icb, sh.icb), Gexp = path(BASE_2H.Gexp, sh.Gexp), Gwel = path(BASE_2H.Gwel, sh.Gwel);
+  const c0 = 24.44, c1 = 0.70, c2 = 0.04, lambda = 2 / 7, i0 = 0, gamma = 0.25, beta = 1, depr = 0.15;
+  const phipro = 0.005, phicon = 0.015, phidep = 0.005, iB = 0.03, rrr = 0.20;
+  const n = ['Y','Cw','Cr','I','DA','K','WP','WPw','WPr','GOS','NOS','DIVnfs','DIVfs','CBp','YDw','YDr','TAXw','TAXr','GDEF','Vhr','Lpro','Lcon','D','B','RES','A','Enfs','Efs'];
+  const o = {}; n.forEach(k => o[k] = arr());
+  const { Y, Cw, Cr, I, DA, K, WP, WPw, WPr, GOS, NOS, DIVnfs, DIVfs, CBp, YDw, YDr, TAXw, TAXr, GDEF, Vhr, Lpro, Lcon, D, B, RES, A, Enfs, Efs } = o;
+  K[1] = 1000; Lpro[1] = 500; Lcon[1] = 300; D[1] = 500; B[1] = 300; RES[1] = 100; A[1] = 100; Enfs[1] = 500; Efs[1] = 300; Y[1] = 1000;
+  Vhr[1] = D[1] + B[1] + Enfs[1] + Efs[1];
+  for (let t = 2; t <= T; t++) {
+    const iLpro = icb[t] + phipro, iLcon = icb[t] + phicon, iD = icb[t] - phidep;       // (20)-(22)
+    DA[t] = depr * K[t - 1];                                                           // (9)
+    I[t] = i0 + gamma * (Y[t - 1] - beta * K[t - 1]) + DA[t];                          // (8)
+    DIVfs[t] = iLpro * Lpro[t - 1] + iLcon * Lcon[t - 1] - iD * D[t - 1] - icb[t] * A[t - 1]; // (17)
+    CBp[t] = icb[t] * A[t - 1];                                                        // (23)
+    Y[t] = Y[t - 1];
+    for (let it = 0; it < 1000; it++) {
+      const Yold = Y[t];
+      WP[t] = Y[t] / (1 + phi[t]); WPr[t] = lambda * WP[t]; WPw[t] = WP[t] - WPr[t];   // (10)-(12)
+      GOS[t] = Y[t] - WP[t]; NOS[t] = GOS[t] - DA[t]; DIVnfs[t] = NOS[t] - iLpro * Lpro[t - 1]; // (13)-(15)
+      TAXw[t] = tauw[t] * (WPw[t] - iLcon * Lcon[t - 1]);                              // (2)
+      YDw[t] = WPw[t] - iLcon * Lcon[t - 1] - TAXw[t] + Gwel[t];                       // (1)
+      Cw[t] = YDw[t];                                                                  // (3)
+      const inc = WPr[t] + iD * D[t - 1] + iB * B[t - 1] + DIVnfs[t] + DIVfs[t];
+      TAXr[t] = taur[t] * inc; YDr[t] = inc - TAXr[t];                                 // (5),(4)
+      Cr[t] = c0 + c1 * YDr[t] + c2 * Vhr[t - 1];                                      // (6)
+      Y[t] = Cw[t] + Cr[t] + I[t] + Gexp[t];                                           // (7)
+      if (Math.abs(Y[t] - Yold) < 1e-10) break;
+    }
+    K[t] = K[t - 1] - DA[t] + I[t]; Lpro[t] = Lpro[t - 1] + I[t] - DA[t]; Lcon[t] = Lcon[t - 1];
+    Enfs[t] = K[t] - Lpro[t]; Efs[t] = Efs[t - 1];
+    GDEF[t] = Gexp[t] + Gwel[t] + iB * B[t - 1] - TAXw[t] - TAXr[t] - CBp[t];          // (24)
+    B[t] = B[t - 1] + GDEF[t];                                                         // (25)
+    D[t] = D[t - 1] + (YDr[t] - Cr[t]) - (B[t] - B[t - 1]);                            // (26)
+    Vhr[t] = D[t] + B[t] + Enfs[t] + Efs[t];                                           // (27)
+    RES[t] = RES[t - 1] + rrr * (D[t] - D[t - 1]); A[t] = RES[t];                      // (18),(19)
+  }
+  const ratio = (a, b) => { const r = arr(); for (let t = 2; t <= T; t++) r[t] = a[t] / b[t]; r[1] = NaN; return r; };
+  return { raw: o, check: checks(o, null), series: { Y, Cw, Cr, I, ps: ratio(GOS, Y), par: ratio(YDw, YDr), GDEF, B, Lpro }, D };
+}
+
+function runCC(sh = {}) {
+  const tauw = path(BASE_CC.tauw, sh.tauw), taur = path(BASE_CC.taur, sh.taur), phi = path(BASE_CC.phi, sh.phi);
+  const icb = path(BASE_CC.icb, sh.icb), gexp = path(BASE_CC.gexp, sh.gexp), gwel = path(BASE_CC.gwel, sh.gwel);
+  const omega0 = path(BASE_CC.omega0, sh.omega0), rho0 = path(BASE_CC.rho0, sh.rho0);
+  const c0 = 24.44, c1 = 0.70, c2 = 0.04, i0 = 0, gamma = 0.25, beta = 1, depr = 0.15;
+  const phipro = 0.005, phicon = 0.015, phidep = 0.005, iB = 0.03, rrr = 0.20;
+  const pr = 25000, Nful = 0.044, nw = 0.75, omega1 = 0.20, omega2 = 1833.337, omega3 = 0.25, rho1 = 0.24, rho2 = 5500, rho3 = 0.50;
+  const n = ['Y','y','Cw','Cr','I','DA','K','k','Gexp','Gwel','WP','WPw','WPr','GOS','NOS','DIVnfs','DIVfs','CBp','YDw','YDr','TAXw','TAXr','GDEF','Vhr','Lpro','Lcon','D','B','RES','A','Enfs','Efs','P','UC','N','Nw','Nr','Ww','Wr','WwT','WrT'];
+  const o = {}; n.forEach(k => o[k] = arr());
+  const { Y, y, Cw, Cr, I, DA, K, k, Gexp, Gwel, WP, WPw, WPr, GOS, NOS, DIVnfs, DIVfs, CBp, YDw, YDr, TAXw, TAXr, GDEF, Vhr, Lpro, Lcon, D, B, RES, A, Enfs, Efs, P, UC, N, Nw, Nr, Ww, Wr, WwT, WrT } = o;
+  K[1] = 1000; k[1] = 1000; Lpro[1] = 500; Lcon[1] = 300; D[1] = 500; B[1] = 300; RES[1] = 100; A[1] = 100; Enfs[1] = 500; Efs[1] = 300; Y[1] = 1000; y[1] = 1000;
+  Vhr[1] = D[1] + B[1] + Enfs[1] + Efs[1];
+  P[1] = 1; N[1] = y[1] / pr; Ww[1] = 500 / (nw * N[1]); Wr[1] = 200 / ((1 - nw) * N[1]); WwT[1] = Ww[1]; WrT[1] = Wr[1];
+  for (let t = 2; t <= T; t++) {
+    WwT[t] = omega0[t] + omega1 * pr + omega2 * (N[t - 1] / Nful);                     // (28)
+    WrT[t] = rho0[t] + rho1 * pr + rho2 * (N[t - 1] / Nful);                           // (29)
+    Ww[t] = Ww[t - 1] + omega3 * P[t - 1] * (WwT[t] - Ww[t - 1] / P[t - 1]);           // (30)
+    Wr[t] = Wr[t - 1] + rho3 * P[t - 1] * (WrT[t] - Wr[t - 1] / P[t - 1]);             // (31)
+    UC[t] = (nw * Ww[t] + (1 - nw) * Wr[t]) / pr;                                      // (32)
+    P[t] = (1 + phi[t]) * UC[t];                                                       // (33)
+    const iLpro = icb[t] + phipro, iLcon = icb[t] + phicon, iD = icb[t] - phidep;
+    Gexp[t] = P[t] * gexp[t]; Gwel[t] = P[t] * gwel[t];                                // (34),(35)
+    DA[t] = P[t] * depr * k[t - 1];                                                    // (9')
+    I[t] = P[t] * (i0 + gamma * (y[t - 1] - beta * k[t - 1]) + depr * k[t - 1]);       // (8')
+    DIVfs[t] = iLpro * Lpro[t - 1] + iLcon * Lcon[t - 1] - iD * D[t - 1] - icb[t] * A[t - 1];
+    CBp[t] = icb[t] * A[t - 1];
+    Y[t] = Y[t - 1];
+    for (let it = 0; it < 1000; it++) {
+      const Yold = Y[t];
+      y[t] = Y[t] / P[t]; N[t] = y[t] / pr; Nw[t] = nw * N[t]; Nr[t] = N[t] - Nw[t];   // (36)-(39)
+      WPw[t] = Nw[t] * Ww[t]; WPr[t] = Nr[t] * Wr[t]; WP[t] = WPw[t] + WPr[t];
+      GOS[t] = Y[t] - WP[t]; NOS[t] = GOS[t] - DA[t]; DIVnfs[t] = NOS[t] - iLpro * Lpro[t - 1];
+      TAXw[t] = tauw[t] * (WPw[t] - iLcon * Lcon[t - 1]);
+      YDw[t] = WPw[t] - iLcon * Lcon[t - 1] - TAXw[t] + Gwel[t];
+      Cw[t] = YDw[t];
+      const inc = WPr[t] + iD * D[t - 1] + iB * B[t - 1] + DIVnfs[t] + DIVfs[t];
+      TAXr[t] = taur[t] * inc; YDr[t] = inc - TAXr[t];
+      Cr[t] = P[t] * c0 + c1 * YDr[t] + c2 * Vhr[t - 1];                               // (6')
+      Y[t] = Cw[t] + Cr[t] + I[t] + Gexp[t];
+      if (Math.abs(Y[t] - Yold) < 1e-10) break;
+    }
+    k[t] = k[t - 1] + (I[t] - DA[t]) / P[t]; K[t] = P[t] * k[t];                       // (40),(16a')
+    Lpro[t] = Lpro[t - 1] + I[t] - DA[t]; Lcon[t] = Lcon[t - 1];
+    Enfs[t] = K[t] - Lpro[t]; Efs[t] = Efs[t - 1];
+    GDEF[t] = Gexp[t] + Gwel[t] + iB * B[t - 1] - TAXw[t] - TAXr[t] - CBp[t];
+    B[t] = B[t - 1] + GDEF[t];
+    D[t] = D[t - 1] + (YDr[t] - Cr[t]) - (B[t] - B[t - 1]);
+    Vhr[t] = D[t] + B[t] + Enfs[t] + Efs[t];
+    RES[t] = RES[t - 1] + rrr * (D[t] - D[t - 1]); A[t] = RES[t];
+  }
+  const reval = arr(); for (let t = 2; t <= T; t++) reval[t] = (P[t] - P[t - 1]) * k[t - 1];
+  const f = fn => { const r = arr(); r[1] = NaN; for (let t = 2; t <= T; t++) r[t] = fn(t); return r; };
+  const ch = checks(o, reval); const scale = Math.max(...Y);
+  return { raw: o, check: { c1: ch.c1 / scale, c2: ch.c2 / scale, c3: ch.c3 / scale, abs: ch },
+    series: { y, infl: f(t => (P[t] / P[t - 1] - 1) * 100), emp: f(t => N[t] / Nful), rww: f(t => Ww[t] / P[t]), rwr: f(t => Wr[t] / P[t]),
+      ps: f(t => GOS[t] / Y[t]), wsw: f(t => WPw[t] / Y[t]), wsr: f(t => WPr[t] / Y[t]), par: f(t => YDw[t] / YDr[t]) }, D };
+}
+const pct = d => v => (v * 100).toFixed(d) + "%";
+const fx = d => v => v.toFixed(d);
+// Slider definitions: a narrow, plausible band around the starting value.
+const CTL = {
+  Gexp:   { label: "Kamu harcaması", min: 120, max: 180, step: 1, fmt: fx(0) },
+  gexp:   { label: "Reel kamu harcaması", min: 120, max: 180, step: 1, fmt: fx(0) },
+  Gwel:   { label: "Sosyal transferler", min: 0, max: 45, step: 0.2, fmt: fx(1) },
+  gwel:   { label: "Reel sosyal transferler", min: 0, max: 45, step: 0.2, fmt: fx(1) },
+  tauw:   { label: "İşçilerin vergi oranı", min: 0.15, max: 0.25, step: 0.005, fmt: pct(1) },
+  taur:   { label: "Rantiyelerin vergi oranı", min: 0.15, max: 0.30, step: 0.005, fmt: pct(1) },
+  phi:    { label: "Kâr marjı", min: 0.35, max: 0.55, step: 0.005, fmt: fx(3) },
+  icb:    { label: "Politika faizi", min: 0.005, max: 0.065, step: 0.0025, fmt: pct(2) },
+  omega0: { label: "İşçilerin reel ücret hedefi", min: 9000, max: 11000, step: 50, fmt: fx(0) },
+  rho0:   { label: "Rantiyelerin reel ücret hedefi", min: 8000, max: 10000, step: 50, fmt: fx(0) }
+};
+const MODELS = {
+  h: {
+    name: "Model 2H", sub: "Çekirdek model, sabit fiyatlar", run: run2H, base: BASE_2H,
+    panels: [["Y", "Çıktı", 1], ["Cw", "İşçilerin tüketimi", 1], ["Cr", "Rantiyelerin tüketimi", 1], ["I", "Yatırım", 1], ["ps", "Kâr payı", 3],
+             ["par", "Gelir paritesi", 3], ["GDEF", "Bütçe açığı", 2], ["B", "Devlet tahvilleri", 1], ["Lpro", "Üretici kredisi", 1]],
+    sum: [["Çıktı, 10. dönem", "Y", 10, 1], ["Çıktı, 100. dönem", "Y", 100, 1], ["Gelir paritesi, 100. dönem", "par", 100, 2], ["Devlet tahvilleri, 100. dönem", "B", 100, 1]],
+    scen: [
+      { tab: "Kamu harcaması", shock: { Gexp: 160 }, ctl: ["Gexp"], desc: "Kamu harcaması 10. dönemde 150'den 160'a çıkar. Çıktı önce çarpan etkisiyle sıçrar; sonra vergi gelirleri ve tahvil stoku uyum sağladıkça yeni durağan duruma yaklaşır." },
+      { tab: "Kâr marjı", shock: { phi: 0.5 }, ctl: ["phi"], desc: "Firmalar kâr marjını 3/7'den (0.429) 0.50'ye yükseltir. Gelir ücretlerden kârlara kayar ve çıktı önce düşer; büyüyen bütçe açığı tahvil stokunu artırdıkça çıktı toparlanır." },
+      { tab: "Politika faizi", shock: { icb: 0.045 }, ctl: ["icb"], desc: "Merkez bankası politika faizini %2.5'ten %4.5'e çıkarır. Borçlu işçiler ve firmalar daha çok faiz öder; bu gelir bankalar üzerinden rantiyelere gider." },
+      { tab: "Yeniden dağıtım", shock: { taur: 0.25, Gwel: 33.2 }, ctl: ["taur", "Gwel"], desc: "Rantiyelerin vergi oranı %20'den %25'e çıkar, sosyal transferler 14.8'den 33.2'ye yükselir. Çıktı önce artar; bütçe fazlası tahvil stokunu erittikçe başlangıç düzeyinin altına iner." },
+      { tab: "Kendi Senaryonu Tasarla", custom: true, shock: {}, ctl: ["Gexp", "Gwel", "tauw", "taur", "phi", "icb"], desc: "Bütün kaydırıcılar başlangıç değerinde durur. Birini ya da birkaçını değiştirin; siyah çizgi şoksuz durağan durumu, kırmızı çizgi sizin senaryonuzu gösterir." }
+    ]
+  },
+  c: {
+    name: "Model 2H-CC", sub: "Ücretler, fiyatlar ve enflasyon", run: runCC, base: BASE_CC,
+    panels: [["y", "Reel çıktı", 1], ["infl", "Enflasyon oranı (%)", 2], ["emp", "İstihdam oranı", 3], ["rww", "İşçilerin reel ücreti", 0], ["rwr", "Rantiyelerin reel ücreti", 0],
+             ["ps", "Kâr payı", 3], ["wsw", "İşçilerin ücret payı", 3], ["wsr", "Rantiyelerin ücret payı", 3], ["par", "Gelir paritesi", 3]],
+    sum: [["Enflasyon, 10. dönem (%)", "infl", 10, 2], ["Enflasyon, 100. dönem (%)", "infl", 100, 2], ["Reel çıktı, 100. dönem", "y", 100, 1], ["İstihdam oranı, 100. dönem", "emp", 100, 3], ["Gelir paritesi, 100. dönem", "par", 100, 2]],
+    scen: [
+      { tab: "Kâr marjı", shock: { phi: 0.5 }, ctl: ["phi"], desc: "Firmalar kâr marjını 0.50'ye yükseltir. Fiyatlar sıçrar ve reel ücretler düşer; işçiler ve rantiyeler kaybı geri almaya çalıştıkça enflasyon kalıcı hale gelir." },
+      { tab: "İşçilerin ücret hedefi", shock: { omega0: 10500 }, ctl: ["omega0"], desc: "İşçiler reel ücret hedefini 500 artırır (otonom terim 10000'den 10500'e). Firmalar kâr marjını koruduğu için fiyatlar sürekli yükselir." },
+      { tab: "Kamu harcaması", shock: { gexp: 160 }, ctl: ["gexp"], desc: "Reel kamu harcaması 150'den 160'a çıkar. İstihdam artar, ücret hedefleri yükselir ve ılımlı bir enflasyon ortaya çıkar." },
+      { tab: "Kendi Senaryonu Tasarla", custom: true, shock: {}, ctl: ["gexp", "gwel", "tauw", "taur", "phi", "icb", "omega0", "rho0"], desc: "Bütün kaydırıcılar başlangıç değerinde durur. Birini ya da birkaçını değiştirin; siyah çizgi şoksuz durağan durumu, kırmızı çizgi sizin senaryonuzu gösterir." }
+    ]
+  }
+};
+const st = { m: "h", s: 0, val: {}, hover: null };
+const root = document.getElementById("sfc-app");
+const $ = id => document.getElementById("ap_" + id);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+function cur() { const M = MODELS[st.m]; return { M, S: M.scen[st.s] }; }
+function startVal(k) { const { M, S } = cur(); return S.shock[k] !== undefined ? S.shock[k] : M.base[k]; }
+function setScenario(m, s) { st.m = m; st.s = s; st.val = {}; cur().S.ctl.forEach(k => st.val[k] = startVal(k)); st.hover = null; buildChrome(); update(); }
+function moved() { const { S } = cur(); return S.ctl.some(k => Math.abs(st.val[k] - startVal(k)) > 1e-9); }
+
+function buildChrome() {
+  const { M, S } = cur();
+  $("models").innerHTML = Object.entries(MODELS).map(([k, v]) => `<button type="button" data-m="${k}" aria-pressed="${k === st.m}">${esc(v.name)}<small>${esc(v.sub)}</small></button>`).join("");
+  $("tabs").innerHTML = M.scen.map((v, i) => `<button type="button" data-s="${i}" class="${v.custom ? "custom" : ""}" aria-pressed="${i === st.s}">${v.custom ? "" : (i + 1) + ". "}${esc(v.tab)}</button>`).join("");
+  $("scTitle").textContent = S.custom ? "Kendi Senaryonu Tasarla" : "Senaryo " + (st.s + 1);
+  $("desc").textContent = S.desc;
+  $("ctls").innerHTML = S.ctl.map(k => { const c = CTL[k]; const meta = S.custom ? `Başlangıç: ${c.fmt(M.base[k])}` : `Başlangıç: ${c.fmt(M.base[k])} · Makale: ${c.fmt(S.shock[k])}`;
+    return `<div class="ctl"><div class="row"><label for="ap_r_${k}">${esc(c.label)}</label><output id="ap_o_${k}" for="ap_r_${k}"></output></div>
+      <input type="range" id="ap_r_${k}" data-k="${k}" min="${c.min}" max="${c.max}" step="${c.step}" value="${st.val[k]}">
+      <div class="ends"><span>${c.fmt(c.min)}</span><span>${c.fmt(c.max)}</span></div><div class="meta">${meta}</div></div>`; }).join("");
+  $("reset").textContent = S.custom ? "Başlangıç değerlerine dön" : "Makaledeki değere dön";
+  $("legend").innerHTML = `<span><i class="sw"></i>${S.custom ? "Şok yok (durağan durum)" : "Makaledeki senaryo"}</span><span><i class="sw you"></i>${S.custom ? "Sizin senaryonuz" : "Sizin ayarınız"}</span><span><i class="sw shock"></i>Şokun başladığı 10. dönem</span>`;
+  $("panels").innerHTML = M.panels.map(([k, t]) => `<div class="chart"><div class="ph"><div class="pt">${esc(t)}</div><span class="rd" id="ap_rd_${k}"></span></div><svg class="ch" id="ap_ch_${k}" viewBox="0 0 300 168" role="img" aria-label="${esc(t)}"></svg></div>`).join("");
+}
+
+function niceStep(x) { const p = Math.pow(10, Math.floor(Math.log10(x))); const f = x / p; return (f < 1.5 ? 1 : f < 3 ? 2 : f < 7 ? 5 : 10) * p; }
+const W = 300, H = 168, L = 44, R = 14, TP = 8, BT = 20;
+const xOf = t => L + (t - 2) / (T - 2) * (W - L - R);
+let scales = {};
+function draw(key, dec, ref, you) {
+  let lo = Infinity, hi = -Infinity;
+  for (const s of [ref, you]) if (s) for (let t = 2; t <= T; t++) { if (s[t] < lo) lo = s[t]; if (s[t] > hi) hi = s[t]; }
+  let span = hi - lo; const mag = Math.max(Math.abs(hi), Math.abs(lo), 1e-9);
+  if (span < mag * 1e-6) { span = mag * 0.04; lo -= span / 2; hi += span / 2; } else { lo -= span * 0.08; hi += span * 0.08; }
+  const step = niceStep((hi - lo) / 3), d = Math.max(0, Math.min(6, Math.ceil(-Math.log10(step) + 1e-9)));
+  const yOf = v => TP + (hi - v) / (hi - lo) * (H - TP - BT);
+  scales[key] = yOf;
+  let g = "";
+  for (let v = Math.ceil(lo / step) * step; v <= hi + 1e-12; v += step) g += `<line class="g" x1="${L}" x2="${W - R}" y1="${yOf(v).toFixed(1)}" y2="${yOf(v).toFixed(1)}"/><text x="${L - 5}" y="${(yOf(v) + 3.5).toFixed(1)}" text-anchor="end">${v.toFixed(d)}</text>`;
+  for (const t of [20, 40, 60, 80, 100]) g += `<text x="${xOf(t).toFixed(1)}" y="${H - 6}" text-anchor="middle">${t}</text>`;
+  g += `<line class="ax" x1="${L}" x2="${W - R}" y1="${H - BT}" y2="${H - BT}"/><line class="shock" x1="${xOf(SHOCK)}" x2="${xOf(SHOCK)}" y1="${TP}" y2="${H - BT}"/>`;
+  const pth = s => { let p = ""; for (let t = 2; t <= T; t++) p += (t === 2 ? "M" : "L") + xOf(t).toFixed(1) + " " + yOf(s[t]).toFixed(1); return p; };
+  g += `<path class="ref" d="${pth(ref)}"/>`;
+  if (you) g += `<path class="you" d="${pth(you)}"/>`;
+  g += `<line class="cur" id="ap_cu_${key}" x1="0" x2="0" y1="${TP}" y2="${H - BT}" visibility="hidden"/><circle class="dref" id="ap_dr_${key}" r="3.5" visibility="hidden"/><circle class="dyou" id="ap_dy_${key}" r="3.5" visibility="hidden"/>`;
+  $("ch_" + key).innerHTML = g;
+}
+let last = null;
+function readouts() {
+  const { M } = cur(); const t = st.hover || T;
+  for (const [k, , dec] of M.panels) {
+    const r = last.ref.series[k][t], y = last.you ? last.you.series[k][t] : null;
+    $("rd_" + k).innerHTML = `t=${t} <i>${r.toFixed(dec)}</i>` + (y === null ? "" : `<i class="y">${y.toFixed(dec)}</i>`);
+    const cu = $("cu_" + k), dr = $("dr_" + k), dy = $("dy_" + k), on = st.hover ? "visible" : "hidden", x = xOf(t).toFixed(1);
+    cu.setAttribute("x1", x); cu.setAttribute("x2", x); cu.setAttribute("visibility", on);
+    dr.setAttribute("cx", x); dr.setAttribute("cy", scales[k](r).toFixed(1)); dr.setAttribute("visibility", on);
+    dy.setAttribute("cx", x); if (y !== null) dy.setAttribute("cy", scales[k](y).toFixed(1)); dy.setAttribute("visibility", y === null ? "hidden" : on);
+  }
+}
+function sci(v) { if (v === 0) return "0"; const [m, e] = v.toExponential(1).split("e"); return m + " × 10<sup>" + e.replace("-", "−").replace("+", "") + "</sup>"; }
+function update() {
+  const { M, S } = cur(); const mv = moved();
+  const ref = M.run(S.shock), base = M.run({});
+  const you = mv ? M.run(Object.assign({}, S.shock, st.val)) : null;
+  last = { ref, you, base };
+  S.ctl.forEach(k => { const o = $("o_" + k); o.textContent = CTL[k].fmt(st.val[k]); o.classList.toggle("moved", Math.abs(st.val[k] - startVal(k)) > 1e-9); });
+  $("reset").disabled = !mv;
+  for (const [k, , dec] of M.panels) draw(k, dec, ref.series[k], you ? you.series[k] : null);
+  readouts();
+  // summary table
+  const cols = S.custom ? [["Şok yok", base, ""], ["Sizin senaryonuz", you, "you"]] : [["Başlangıç", base, null], ["Makaledeki senaryo", ref, ""], ["Sizin ayarınız", you, "you"]];
+  $("sum").innerHTML = `<thead><tr><th>Gösterge</th>${cols.map(c => `<th>${c[2] === null ? "" : `<i class="sw ${c[2]}"></i>`}${c[0]}</th>`).join("")}</tr></thead><tbody>` +
+    M.sum.map(([lab, k, t, d]) => `<tr><td>${lab}</td>${cols.map(c => `<td>${c[1] ? c[1].series[k][t].toFixed(d) : "–"}</td>`).join("")}</tr>`).join("") + "</tbody>";
+  // accounting checks for the run on screen
+  const run = you || ref, ck = run.check.abs || run.check, tol = st.m === "h" ? 1e-6 : 1e-9 * Math.max(...run.raw.Y), ok = Math.max(ck.c1, ck.c2, ck.c3) <= tol;
+  $("checks").innerHTML = `<span>(C1) Toplam net borç verme</span><b>${sci(ck.c1)}</b><span>(C2) Toplam net finansal servet</span><b>${sci(ck.c2)}</b><span>(C3) Stok-akım bağı</span><b>${sci(ck.c3)}</b>`;
+  $("verdict").innerHTML = ok ? `<span class="pill ok">✓ Model stok-akım tutarlı</span>` : `<span class="pill bad">✕ Model stok-akım tutarlı değil</span>`;
+  // notes
+  const notes = [];
+  if (run.series.emp) { let mx = 0; for (let t = 2; t <= T; t++) mx = Math.max(mx, run.series.emp[t]); if (mx > 1) notes.push("İstihdam oranı 1'i aşıyor. Modelde tam istihdam sınırı yoktur; bu ayar işgücünden fazla istihdam gerektirir."); }
+  let minD = Infinity; for (let t = 1; t <= T; t++) minD = Math.min(minD, run.D[t]);
+  if (minD < 0) notes.push("Mevduat stoku negatife düşüyor. Bu ayar modelin anlamlı olduğu aralığın dışında.");
+  $("notes").innerHTML = notes.map(n => `<div class="warn">${n}</div>`).join("");
+}
+root.addEventListener("click", e => {
+  const b = e.target.closest("button"); if (!b) return;
+  if (b.dataset.m) setScenario(b.dataset.m, 0);
+  else if (b.dataset.s) setScenario(st.m, +b.dataset.s);
+  else if (b.id === "ap_reset") setScenario(st.m, st.s);
+});
+root.addEventListener("input", e => { const k = e.target.dataset && e.target.dataset.k; if (!k) return; st.val[k] = +e.target.value; update(); });
+function hoverAt(e) {
+  const svg = e.target.closest("svg.ch"); if (!svg) { if (st.hover) { st.hover = null; readouts(); } return; }
+  const r = svg.getBoundingClientRect(), x = (e.clientX - r.left) / r.width * W;
+  const t = Math.max(2, Math.min(T, Math.round(2 + (x - L) / (W - L - R) * (T - 2))));
+  if (t !== st.hover) { st.hover = t; readouts(); }
+}
+$("panels").addEventListener("pointermove", hoverAt);
+$("panels").addEventListener("pointerdown", hoverAt);
+$("panels").addEventListener("pointerleave", () => { st.hover = null; readouts(); });
+setScenario("h", 0);
 })();
 </script>
 
